@@ -36,3 +36,7 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+    
+class Votes(models.Model):
+    choice_id = models.ForeignKey(Choice, on_delete=models.CASCADE)
+    vote_date = models.DateTimeField("date voted")
